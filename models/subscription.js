@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 
 const subscriptionSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    price: { type: Number, required: true },
+    planName: { type: String, required: true },
+    pricePerMonth: { type: Number },
+    followers: { type: Number },
     features: [{ type: String }],
-    follower: { type: Number, required: true },
-}, { timestamps: true, versionKey: false });
+}, { versionKey: false });
 
 const Subscription = mongoose.model('Subscription', subscriptionSchema);
 module.exports = Subscription;

@@ -5,14 +5,14 @@ const userSchema = new mongoose.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true, minLength: 8 },
+    phoneNumber: { type: String, required: true, unique: true },
     subscriptionPlan: { type: ObjectId, ref: 'Subscription' },
-    phone: { type: String, required: true, unique: true },
     leagues: [{ type: ObjectId, ref: 'League' }],
     tournaments: [{ type: ObjectId, ref: 'Tournament' }],
 }, { timestamps: true, versionKey: false })
 
 const userTokenSchema = new mongoose.Schema({
-    userId: { type: Number },
+    userId: { type: ObjectId },
     token: { type: String },
     active: { type: Number, default: 1 },
     expiresIn: { type: Number }
