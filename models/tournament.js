@@ -6,10 +6,10 @@ const tournamentSchema = new mongoose.Schema({
     gameType: { type: String, required: true },
     participants: [{ type: ObjectId, ref: 'User' }],
     maxParticipants: { type: Number, required: true },
-    // startDate: Date,
-    prize: { type: String, required: true },
+    startDate: { type: String, required: true },
+    prizePool: { type: String, required: true },
     status: { type: String, default: 'upcoming' },
-}, { timestamps: true });
+}, { versionKey: false });
 
 const Tournament = mongoose.model('Tournament', tournamentSchema);
 module.exports = Tournament;
