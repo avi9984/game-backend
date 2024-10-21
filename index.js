@@ -14,7 +14,9 @@ app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect(process.env.MONGO_URL).then(() => console.log("MongoDB is connected")).catch((err) => console.log(err))
 
-
+app.get('/', (req, res) => {
+    res.send(`<h1>Welcome to tournament backend</h1>`)
+})
 app.use('/users', userRoutes);
 app.use('/subscription', subscriptionRoutes);
 app.use('/leagues', leagueRoutes);

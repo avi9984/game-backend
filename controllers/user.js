@@ -1,6 +1,6 @@
-const { User, UserToken } = require('../models/user');
+const { User } = require('../models/user');
 const { sendVerificationCode, verifyCode } = require('../services/twilio');
-const { validEmail, validPwd, validPhoneNumber } = require('../utils/validator');
+const { validEmail, validPwd } = require('../utils/validator');
 const bcrypt = require('bcryptjs');
 const { createToken, verifyToken } = require('../services/token')
 
@@ -101,7 +101,6 @@ const userLogin = async (req, res) => {
             userId: user._id,
             email: user.email,
             phoneNumber: user.phoneNumber,
-            // token: verification.token,
         };
 
         if (verification.isVerified) {
@@ -124,7 +123,6 @@ const userLogin = async (req, res) => {
         return res.status(500).json({ status: false, message: "Internal Server Error" });
     }
 }
-
 
 
 

@@ -18,10 +18,5 @@ const validPwd = (Password) => {
     }
 };
 
-const validPhoneNumber = (phoneNumber) => {
-    const phoneRegex = /^\+?[1-9]{1,3}[-.\s]?(\(?\d{1,4}\)?[-.\s]?){1,5}$/;
-    return phoneRegex.test(phoneNumber);
-};
 
-
-module.exports = { validEmail, validPwd, validPhoneNumber }
+module.exports = { validEmail, validPwd }
