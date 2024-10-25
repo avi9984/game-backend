@@ -55,6 +55,10 @@ npm start
 
 The server will start running on `http://localhost:3000`.
 
+```
+# Game AWS server http://43.204.141.156:3000/subscription/getAllPlan
+```
+
 ### 5. API Documentation
 
 The following API endpoints are available.
